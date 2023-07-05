@@ -95,7 +95,7 @@ UnitOutputDir=
 PackageDLLOutputDir=
 PackageDCPOutputDir=
 SearchPath=
-Packages=vcl;rtl;visualclx;vcldb;visualdbclx;dbrtl;vclx;vclactnband;vclshlctrls;vclie;xmlrtl;inet;inetdbbde;inetdbxpress;webdsnap;dsnap;soaprtl;websnap;adortl;bdertl;vcldbx;dbexpress;dsnapcon;dbxcds;ibxpress;teeui;teedb;tee;dss;indy;VclSmp;Rave50CLX;Rave50VCL;IntrawebDB_50_70;Intraweb_50_70;VclNewlyext;frx7;fs7;fsDB7;frxDB7;frxADO7;frxBDE7;frxDBX7
+Packages=vcl;rtl;dbrtl;inet;inetdb;dsnap;bdertl;vclx;vcldb;vcldbx;visualclx;visualdbclx;vclactnband;vclshlctrls;vclie;xmlrtl;inetdbbde;inetdbxpress;webdsnap;soaprtl;websnap;adortl;dbexpress;dsnapcon;dbxcds;ibxpress;teeui;teedb;tee;dss;indy;VclSmp;qrpt;teeqr;Rave50CLX;Rave50VCL;IntrawebDB_50_70;Intraweb_50_70;VclNewlyext
 Conditionals=
 DebugSourceDirs=
 UsePackages=0
@@ -117,7 +117,7 @@ PreRelease=0
 Special=0
 Private=0
 DLL=0
-Locale=14345
+Locale=1033
 CodePage=1252
 [Excluded Packages]
 C:\Program Files (x86)\Borland\Delphi7\FastReport 4\LibD7\dclfrxcs7.bpl=FastReport 4.0 Client/Server Components

@@ -1,9 +1,9 @@
-object Form3: TForm3
-  Left = 358
-  Top = 163
-  Width = 833
-  Height = 475
-  Caption = 'Form3'
+object Form5: TForm5
+  Left = 192
+  Top = 152
+  Width = 928
+  Height = 480
+  Caption = 'Form5'
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -14,12 +14,18 @@ object Form3: TForm3
   OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
-  object lbll1: TLabel
-    Left = 8
-    Top = 16
-    Width = 65
+  object I_l2: TLabel
+    Left = 52
+    Top = 120
+    Width = 3
+    Height = 13
+  end
+  object I_l1: TLabel
+    Left = 28
+    Top = 12
+    Width = 71
     Height = 15
-    Caption = 'Nama Kelas'
+    Caption = 'NAMA POIN'
     Font.Charset = ANSI_CHARSET
     Font.Color = clWindowText
     Font.Height = -13
@@ -27,12 +33,25 @@ object Form3: TForm3
     Font.Style = [fsBold]
     ParentFont = False
   end
-  object lbll3: TLabel
-    Left = 8
-    Top = 56
+  object I_l4: TLabel
+    Left = 20
+    Top = 100
+    Width = 61
+    Height = 16
+    Caption = 'TIPE POIN'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object I_l10: TLabel
+    Left = 20
+    Top = 60
     Width = 46
     Height = 15
-    Caption = 'Jurusan'
+    Caption = 'BOBOT'
     Font.Charset = ANSI_CHARSET
     Font.Color = clWindowText
     Font.Height = -13
@@ -40,134 +59,115 @@ object Form3: TForm3
     Font.Style = [fsBold]
     ParentFont = False
   end
-  object lbll6: TLabel
-    Left = 4
-    Top = 92
-    Width = 93
-    Height = 15
-    Caption = 'Total Kehadiraan'
-    Font.Charset = ANSI_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -13
-    Font.Name = 'Times New Roman'
-    Font.Style = [fsBold]
-    ParentFont = False
-  end
-  object btnb1: TButton
-    Left = 28
-    Top = 160
-    Width = 75
-    Height = 29
-    Caption = 'Baru'
-    TabOrder = 0
-    OnClick = btnb1Click
-  end
-  object btnb2: TButton
-    Left = 136
-    Top = 156
-    Width = 75
-    Height = 33
-    Caption = 'Simpan'
-    TabOrder = 1
-    OnClick = btnb2Click
-  end
-  object btnb3: TButton
-    Left = 244
-    Top = 156
-    Width = 75
-    Height = 33
-    Caption = 'Edit'
-    TabOrder = 2
-    OnClick = btnb3Click
-  end
-  object btnb4: TButton
-    Left = 344
-    Top = 156
-    Width = 75
-    Height = 33
-    Caption = 'Hapus'
-    TabOrder = 3
-    OnClick = btnb4Click
-  end
-  object btnb5: TButton
-    Left = 452
-    Top = 156
-    Width = 75
-    Height = 33
-    Caption = 'Batal'
-    TabOrder = 4
-    OnClick = btnb5Click
-  end
-  object btnb6: TButton
-    Left = 556
-    Top = 156
-    Width = 75
-    Height = 33
-    Caption = 'Print'
-    TabOrder = 5
-    OnClick = btnb6Click
-  end
-  object edt_1: TEdit
-    Left = 108
-    Top = 8
-    Width = 190
-    Height = 21
-    TabOrder = 6
-  end
-  object edt_2: TEdit
-    Left = 108
-    Top = 48
-    Width = 190
-    Height = 23
-    Font.Charset = ANSI_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -13
-    Font.Name = 'Times New Roman'
-    Font.Style = [fsBold]
-    ParentFont = False
-    TabOrder = 7
-  end
-  object edt_3: TEdit
-    Left = 108
-    Top = 88
-    Width = 190
-    Height = 21
-    TabOrder = 8
-  end
-  object dbgrd1: TDBGrid
-    Left = 36
-    Top = 192
-    Width = 533
-    Height = 120
+  object dgSiswadbgrd1: TDBGrid
+    Left = 12
+    Top = 260
+    Width = 877
+    Height = 157
     DataSource = ds1
-    TabOrder = 9
+    TabOrder = 0
     TitleFont.Charset = DEFAULT_CHARSET
     TitleFont.Color = clWindowText
     TitleFont.Height = -11
     TitleFont.Name = 'Tahoma'
     TitleFont.Style = []
-    OnCellClick = dbgrd1CellClick
+    OnCellClick = dgSiswadbgrd1CellClick
     Columns = <
       item
         Expanded = False
-        FieldName = 'Id_kelas'
+        FieldName = 'Id_poin'
         Visible = True
       end
       item
         Expanded = False
-        FieldName = 'Nama kelas'
+        FieldName = 'Nama poin'
         Visible = True
       end
       item
         Expanded = False
-        FieldName = 'Jurusan'
+        FieldName = 'Bobot'
         Visible = True
       end
       item
         Expanded = False
-        FieldName = 'Total kehadiran'
+        FieldName = 'Tipe poin'
         Visible = True
       end>
+  end
+  object b1: TButton
+    Left = 116
+    Top = 228
+    Width = 75
+    Height = 29
+    Caption = 'Baru'
+    TabOrder = 1
+    OnClick = b1Click
+  end
+  object b2: TButton
+    Left = 224
+    Top = 224
+    Width = 75
+    Height = 33
+    Caption = 'Simpan'
+    TabOrder = 2
+    OnClick = b2Click
+  end
+  object b3: TButton
+    Left = 332
+    Top = 224
+    Width = 75
+    Height = 33
+    Caption = 'Edit'
+    TabOrder = 3
+    OnClick = b3Click
+  end
+  object b4: TButton
+    Left = 432
+    Top = 224
+    Width = 75
+    Height = 33
+    Caption = 'Hapus'
+    TabOrder = 4
+    OnClick = b4Click
+  end
+  object b5: TButton
+    Left = 540
+    Top = 224
+    Width = 75
+    Height = 33
+    Caption = 'Batal'
+    TabOrder = 5
+    OnClick = b5Click
+  end
+  object b6: TButton
+    Left = 644
+    Top = 224
+    Width = 75
+    Height = 33
+    Caption = 'Print'
+    TabOrder = 6
+    OnClick = b6Click
+  end
+  object e_1: TEdit
+    Left = 112
+    Top = 8
+    Width = 201
+    Height = 21
+    TabOrder = 7
+  end
+  object e_2: TEdit
+    Left = 104
+    Top = 56
+    Width = 201
+    Height = 21
+    TabOrder = 8
+  end
+  object e_3: TEdit
+    Left = 108
+    Top = 96
+    Width = 205
+    Height = 21
+    TabOrder = 9
   end
   object con1: TZConnection
     ControlsCodePage = cGET_ACP
@@ -182,21 +182,34 @@ object Form3: TForm3
     LibraryLocation = 
       'C:\Program Files (x86)\Borland\Delphi7\Projects\TUGASVISUAL\libm' +
       'ysql.dll'
-    Left = 616
-    Top = 8
+    Left = 4
+    Top = 216
+  end
+  object zqry1: TZQuery
+    Connection = con1
+    Active = True
+    SQL.Strings = (
+      'SELECT * FROM poin'
+      ''
+      '')
+    Params = <>
+    Properties.Strings = (
+      '')
+    Left = 76
+    Top = 224
   end
   object ds1: TDataSource
     DataSet = zqry1
-    Left = 616
-    Top = 60
+    Left = 40
+    Top = 220
   end
-  object frxdbdtst1: TfrxDBDataset
+  object frxDBDataset1: TfrxDBDataset
     UserName = 'frxDBDataset'
     CloseDataSource = False
     DataSet = zqry2
     BCDToCurrency = False
-    Left = 572
-    Top = 4
+    Left = 736
+    Top = 20
   end
   object frxrprt1: TfrxReport
     Version = '4.12.6'
@@ -207,17 +220,17 @@ object Form3: TForm3
     PrintOptions.Printer = 'Default'
     PrintOptions.PrintOnSheet = 0
     ReportOptions.CreateDate = 45097.373740509300000000
-    ReportOptions.LastChange = 45104.518903599500000000
+    ReportOptions.LastChange = 45106.567952708300000000
     ScriptLanguage = 'PascalScript'
     ScriptText.Strings = (
       'begin'
       ''
       'end.')
-    Left = 576
-    Top = 60
+    Left = 740
+    Top = 76
     Datasets = <
       item
-        DataSet = frxdbdtst1
+        DataSet = frxDBDataset1
         DataSetName = 'frxDBDataset'
       end>
     Variables = <>
@@ -251,7 +264,7 @@ object Form3: TForm3
           Font.Style = [fsBold]
           HAlign = haCenter
           Memo.UTF8 = (
-            'Laporan Data Wali Kelas')
+            'Laporan POIN')
           ParentFont = False
           VAlign = vaCenter
         end
@@ -261,7 +274,7 @@ object Form3: TForm3
         Top = 83.149660000000000000
         Width = 1046.929810000000000000
         object Memo1: TfrxMemoView
-          Width = 34.015770000000000000
+          Width = 37.795300000000000000
           Height = 34.015770000000000000
           ShowHint = False
           Font.Charset = DEFAULT_CHARSET
@@ -277,8 +290,8 @@ object Form3: TForm3
           VAlign = vaCenter
         end
         object Memo3: TfrxMemoView
-          Left = 34.015770000000000000
-          Width = 281.267780000000000000
+          Left = 37.795300000000000000
+          Width = 351.496290000000000000
           Height = 34.015770000000000000
           ShowHint = False
           Font.Charset = DEFAULT_CHARSET
@@ -289,13 +302,13 @@ object Form3: TForm3
           Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
           HAlign = haCenter
           Memo.UTF8 = (
-            'Nama Wali Kelas')
+            'NAMA POIN')
           ParentFont = False
           VAlign = vaCenter
         end
         object Memo5: TfrxMemoView
-          Left = 315.283550000000000000
-          Width = 326.488250000000000000
+          Left = 389.291590000000000000
+          Width = 211.653680000000000000
           Height = 34.015770000000000000
           ShowHint = False
           Font.Charset = DEFAULT_CHARSET
@@ -306,13 +319,13 @@ object Form3: TForm3
           Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
           HAlign = haCenter
           Memo.UTF8 = (
-            'Jurusan')
+            'BOBOT')
           ParentFont = False
           VAlign = vaCenter
         end
         object Memo7: TfrxMemoView
-          Left = 641.771800000000000000
-          Width = 404.401670000000000000
+          Left = 600.945270000000000000
+          Width = 287.244280000000000000
           Height = 34.015770000000000000
           ShowHint = False
           Font.Charset = DEFAULT_CHARSET
@@ -323,95 +336,94 @@ object Form3: TForm3
           Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
           HAlign = haCenter
           Memo.UTF8 = (
-            'Total Kehadiran')
+            'TIPE POIN')
           ParentFont = False
           VAlign = vaCenter
         end
       end
       object MasterData1: TfrxMasterData
-        Height = 40.811070000000000000
+        Height = 71.811070000000000000
         Top = 177.637910000000000000
         Width = 1046.929810000000000000
-        DataSet = frxdbdtst1
+        DataSet = frxDBDataset1
         DataSetName = 'frxDBDataset'
         RowCount = 0
         object Memo2: TfrxMemoView
-          Top = 4.362090000000000000
-          Width = 34.015770000000000000
-          Height = 34.015770000000000000
+          Width = 37.795300000000000000
+          Height = 71.811070000000000000
           ShowHint = False
+          DataField = 'Id_poin'
+          DataSet = frxDBDataset1
+          DataSetName = 'frxDBDataset'
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
           Font.Height = -16
           Font.Name = 'Times New Roman'
-          Font.Style = [fsBold]
+          Font.Style = []
           Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
           HAlign = haCenter
           Memo.UTF8 = (
-            '[Line]')
+            '[frxDBDataset."Id_poin"]')
           ParentFont = False
           VAlign = vaCenter
         end
         object Memo4: TfrxMemoView
-          Left = 34.015770000000000000
-          Top = 4.362090000000000000
-          Width = 281.267780000000000000
-          Height = 34.015770000000000000
+          Left = 37.795300000000000000
+          Width = 351.496290000000000000
+          Height = 71.811070000000000000
           ShowHint = False
-          DataField = 'Nama_kelas'
-          DataSet = frxdbdtst1
+          DataField = 'Nama poin'
+          DataSet = frxDBDataset1
           DataSetName = 'frxDBDataset'
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
           Font.Height = -16
           Font.Name = 'Times New Roman'
-          Font.Style = [fsBold]
+          Font.Style = []
           Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
           HAlign = haCenter
           Memo.UTF8 = (
-            '[frxDBDataset."Nama_kelas"]')
-          ParentFont = False
-          VAlign = vaCenter
-        end
-        object Memo6: TfrxMemoView
-          Left = 315.283550000000000000
-          Top = 4.362090000000000000
-          Width = 326.488250000000000000
-          Height = 34.015770000000000000
-          ShowHint = False
-          DataField = 'Jurusan'
-          DataSet = frxdbdtst1
-          DataSetName = 'frxDBDataset'
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clBlack
-          Font.Height = -16
-          Font.Name = 'Times New Roman'
-          Font.Style = [fsBold]
-          Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
-          HAlign = haCenter
-          Memo.UTF8 = (
-            '[frxDBDataset."Jurusan"]')
+            '[frxDBDataset."Nama poin"]')
           ParentFont = False
           VAlign = vaCenter
         end
         object Memo8: TfrxMemoView
-          Left = 641.771800000000000000
-          Top = 4.362090000000000000
-          Width = 404.401670000000000000
-          Height = 34.015770000000000000
+          Left = 600.945270000000000000
+          Width = 287.244280000000000000
+          Height = 71.811070000000000000
           ShowHint = False
-          DataField = 'Total_kehadiran'
-          DataSet = frxdbdtst1
+          DataField = 'Tipe poin'
+          DataSet = frxDBDataset1
           DataSetName = 'frxDBDataset'
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
           Font.Height = -16
           Font.Name = 'Times New Roman'
-          Font.Style = [fsBold]
+          Font.Style = []
           Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
           HAlign = haCenter
           Memo.UTF8 = (
-            '[frxDBDataset."Total_kehadiran"]')
+            '[frxDBDataset."Tipe poin"]')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo6: TfrxMemoView
+          Left = 389.291590000000000000
+          Width = 211.653680000000000000
+          Height = 71.811070000000000000
+          ShowHint = False
+          DataField = 'Bobot'
+          DataSet = frxDBDataset1
+          DataSetName = 'frxDBDataset'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -16
+          Font.Name = 'Times New Roman'
+          Font.Style = []
+          Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
+          HAlign = haCenter
+          Memo.UTF8 = (
+            '[frxDBDataset."Bobot"]')
           ParentFont = False
           VAlign = vaCenter
         end
@@ -421,18 +433,9 @@ object Form3: TForm3
   object zqry2: TZQuery
     Connection = con1
     SQL.Strings = (
-      'select * from kelas')
+      'SELECT * FROM poin')
     Params = <>
-    Left = 572
-    Top = 116
-  end
-  object zqry1: TZQuery
-    Connection = con1
-    Active = True
-    SQL.Strings = (
-      'Select * from kelas')
-    Params = <>
-    Left = 616
-    Top = 112
+    Left = 736
+    Top = 132
   end
 end

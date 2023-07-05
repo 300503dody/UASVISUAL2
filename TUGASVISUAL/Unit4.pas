@@ -1,17 +1,19 @@
-unit Unit3;
+unit Unit4;
 
 interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
   Dialogs, DB, ZAbstractRODataset, ZAbstractDataset, ZDataset, frxClass,
-  frxDBSet, ZAbstractConnection, ZConnection, Grids, DBGrids, StdCtrls;
+  frxDBSet, ZAbstractConnection, ZConnection, Grids, DBGrids, StdCtrls,
+  ComCtrls;
 
 type
-  TForm3 = class(TForm)
+  TForm4 = class(TForm)
     lbll1: TLabel;
     lbll3: TLabel;
     lbll6: TLabel;
+    lbll4: TLabel;
     btnb1: TButton;
     btnb2: TButton;
     btnb3: TButton;
@@ -21,6 +23,7 @@ type
     edt_1: TEdit;
     edt_2: TEdit;
     edt_3: TEdit;
+    edt_4: TEdit;
     dbgrd1: TDBGrid;
     con1: TZConnection;
     ds1: TDataSource;
@@ -34,7 +37,7 @@ type
     procedure btnb4Click(Sender: TObject);
     procedure btnb5Click(Sender: TObject);
     procedure btnb6Click(Sender: TObject);
-    procedure posisiawal;
+     procedure posisiawal;
     procedure bersih;
     procedure dbgrd1CellClick(Column: TColumn);
     procedure FormShow(Sender: TObject);
@@ -45,20 +48,22 @@ type
   end;
 
 var
-  Form3: TForm3;
-     id: string;
+  Form4: TForm4;
+  id: string;
+
 implementation
 
 {$R *.dfm}
 
-procedure TForm3.bersih;
+procedure TForm4.bersih;
 begin
   edt_1.Clear;
   edt_2.Clear;
   edt_3.Clear;
+  edt_4.Clear;
 end;
 
-procedure TForm3.btnb1Click(Sender: TObject);
+procedure TForm4.btnb1Click(Sender: TObject);
 begin
   btnb1.Enabled := False;
   btnb2.Enabled := True;
@@ -69,44 +74,49 @@ begin
   edt_1.Enabled := True;
   edt_2.Enabled := True;
   edt_3.Enabled := True;
+  edt_4.Enabled := True;
 end;
 
-procedure TForm3.btnb2Click(Sender: TObject);
+procedure TForm4.btnb2Click(Sender: TObject);
 begin
   if edt_1.Text = '' then
   begin
-    ShowMessage('Nama Kelas BELUM DIISI DENGAN BENAR');
+    ShowMessage('NIK BELUM DIISI DENGAN BENAR');
   end
   else if edt_2.Text = '' then
   begin
-    ShowMessage('Jurusan BELUM DIISI DENGAN BENAR');
+    ShowMessage('Nama BELUM DIISI DENGAN BENAR');
   end
   else if edt_3.Text = '' then
   begin
-    ShowMessage('Total Kehadiran BELUM DIISI DENGAN BENAR');
+    ShowMessage('Level BELUM DIISI DENGAN BENAR');
   end
-  else if zqry1.Locate(' Nama_kelas', edt_1.Text, []) then
+  else if edt_4.Text = '' then
+  begin
+    ShowMessage('Status BELUM SESUAI');
+  end
+  else if zqry1.Locate(' Nik', edt_1.Text, []) then
   begin
     ShowMessage('DATA SUDAH ADA DALAM SISTEM');
   end
   else
   begin
     zqry1.SQL.Clear;
-    zqry1.SQL.Add('insert into kelas values(null, "' + edt_1.Text + '", "' + edt_2.Text + '", "' +
-      edt_3.Text + '")');
+    zqry1.SQL.Add('insert into user values(null, "' + edt_1.Text + '", "' + edt_2.Text + '", "' +edt_3.Text + '", "' + edt_4.Text + '")');
     zqry1.ExecSQL;
 
     zqry1.SQL.Clear;
-    zqry1.SQL.Add('select * from kelas');
+    zqry1.SQL.Add('select * from user');
     zqry1.Open;
     ShowMessage('DATA BERHASIL DISIMPAN!');
     posisiawal;
   end;
 end;
 
-procedure TForm3.btnb3Click(Sender: TObject);
+procedure TForm4.btnb3Click(Sender: TObject);
 begin
-  if (edt_1.Text = '') or (edt_2.Text = '') or (edt_3.Text = '')then
+  if (edt_1.Text = '') or (edt_2.Text = '') or (edt_3.Text = '') or
+    (edt_4.Text = '') then
   begin
     ShowMessage('INPUTAN WAJIB DIISI!');
   end
@@ -119,28 +129,28 @@ begin
   begin
     ShowMessage('DATA BERHASIL DIUPDATE!');
     zqry1.SQL.Clear;
-    zqry1.SQL.Add('Update kelas set Nama_kelas = "' + edt_1.Text +
-      '", Jurusan = "' + edt_2.Text + '", Total_kehadiran = "' + edt_3.Text +
-      '" where Id_kelas = "' + id + '"');
+    zqry1.SQL.Add('Update user set Nik = "' + edt_1.Text +
+      '", Nama = "' + edt_2.Text + '", Level = "' + edt_3.Text +
+      '", Status = "' + edt_4.Text + '" where Id_user = "' + id + '"');
     zqry1.ExecSQL;
 
     zqry1.SQL.Clear;
-    zqry1.SQL.Add('select * from kelas');
+    zqry1.SQL.Add('select * from user');
     zqry1.Open;
 
     posisiawal;
   end;
 end;
 
-procedure TForm3.btnb4Click(Sender: TObject);
+procedure TForm4.btnb4Click(Sender: TObject);
 begin
   if MessageDlg('APAKAH YAKIN MENGHAPUS DATA INI?', mtWarning, [mbYes, mbNo], 0) = mrYes then
   begin
     zqry1.SQL.Clear;
-    zqry1.SQL.Add(' delete from kelas where Id_kelas = "' + id + '"');
+    zqry1.SQL.Add(' delete from user where Id_user = "' + id + '"');
     zqry1.ExecSQL;
     zqry1.SQL.Clear;
-    zqry1.SQL.Add('select * from kelas');
+    zqry1.SQL.Add('select * from user');
     zqry1.Open;
     ShowMessage('DATA BERHASIL DIHAPUS');
     posisiawal;
@@ -152,17 +162,17 @@ begin
   end;
 end;
 
-procedure TForm3.btnb5Click(Sender: TObject);
+procedure TForm4.btnb5Click(Sender: TObject);
 begin
   posisiawal;
 end;
 
-procedure TForm3.btnb6Click(Sender: TObject);
+procedure TForm4.btnb6Click(Sender: TObject);
 begin
   frxrprt1.ShowReport();
 end;
 
-procedure TForm3.posisiawal;
+procedure TForm4.posisiawal;
 begin
   bersih;
   btnb1.Enabled := True;
@@ -174,9 +184,10 @@ begin
   edt_1.Enabled := false;
   edt_2.Enabled := false;
   edt_3.Enabled := false;
+  edt_4.Enabled := false;
 end;
 
-procedure TForm3.FormShow(Sender: TObject);
+procedure TForm4.FormShow(Sender: TObject);
 begin
   bersih;
   btnb1.Enabled := true;
@@ -188,18 +199,20 @@ begin
   edt_1.Enabled := false;
   edt_2.Enabled := false;
   edt_3.Enabled := false;
+  edt_4.Enabled := false;
 end;
 
-procedure TForm3.dbgrd1CellClick(Column: TColumn);
+procedure TForm4.dbgrd1CellClick(Column: TColumn);
 begin
   id := zqry1.Fields[0].AsString;
   edt_1.Text := zqry1.Fields[1].AsString;
   edt_2.Text := zqry1.Fields[2].AsString;
   edt_3.Text := zqry1.Fields[3].AsString;
+  edt_4.Text := zqry1.Fields[4].AsString;
   edt_1.Enabled := True;
   edt_2.Enabled := True;
   edt_3.Enabled := True;
-
+  edt_4.Enabled := True;
   btnb1.Enabled := false;
   btnb2.Enabled := False;
   btnb3.Enabled := True;
