@@ -134,7 +134,7 @@ object Form7: TForm7
       end
       item
         Expanded = False
-        FieldName = 'Id_wali kelas'
+        FieldName = 'Id_wali_kelas'
         Visible = True
       end
       item
@@ -560,7 +560,7 @@ object Form7: TForm7
           Width = 177.637910000000000000
           Height = 71.811070000000000000
           ShowHint = False
-          DataField = 'Id_wali kelas'
+          DataField = 'Id_wali_kelas'
           DataSet = frxDBDataset1
           DataSetName = 'frxDBDataset'#13#10
           Font.Charset = DEFAULT_CHARSET
@@ -572,7 +572,7 @@ object Form7: TForm7
           HAlign = haCenter
           Memo.UTF8 = (
             '[frxDBDataset'
-            '."Id_wali kelas"]')
+            '."Id_wali_kelas"]')
           ParentFont = False
           VAlign = vaCenter
         end
@@ -581,7 +581,7 @@ object Form7: TForm7
           Width = 139.842610000000000000
           Height = 71.811070000000000000
           ShowHint = False
-          DataField = 'Id_orgtua'
+          DataField = 'Id_org_tua'
           DataSet = frxDBDataset1
           DataSetName = 'frxDBDataset'#13#10
           Font.Charset = DEFAULT_CHARSET
@@ -593,7 +593,7 @@ object Form7: TForm7
           HAlign = haCenter
           Memo.UTF8 = (
             '[frxDBDataset'
-            '."Id_orgtua"]')
+            '."Id_org_tua"]')
           ParentFont = False
           VAlign = vaCenter
         end
@@ -623,6 +623,7 @@ object Form7: TForm7
   end
   object zqry2: TZQuery
     Connection = con1
+    Active = True
     SQL.Strings = (
       'select * from catatan')
     Params = <>

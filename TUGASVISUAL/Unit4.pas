@@ -37,7 +37,7 @@ type
     procedure btnb4Click(Sender: TObject);
     procedure btnb5Click(Sender: TObject);
     procedure btnb6Click(Sender: TObject);
-     procedure posisiawal;
+    procedure posisiawal;
     procedure bersih;
     procedure dbgrd1CellClick(Column: TColumn);
     procedure FormShow(Sender: TObject);

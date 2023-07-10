@@ -121,7 +121,7 @@ if (e_1.Text= '')or (e_2.Text ='')or(e_3.Text= '')or (e_4.Text ='') or (Edit1.Te
 begin
   ShowMessage('INPUTAN WAJIB DIISI!');
 end else
-if e_1.Text = zqry1.Fields[1].AsString then
+if e_1.Text = zqry1.Fields[2].AsString then
 begin
  ShowMessage('DATA TIDAK ADA PERUBAHAN');
  posisiawal;
@@ -129,7 +129,7 @@ end else
 begin
  ShowMessage('DATA BERHASIL DIUPDATE!');
 zqry1.SQL.Clear;
-zqry1.SQL.Add('Update catatan set Semester= "'+e_1.Text+'",Id_siswa ="'+e_2.Text+'",Id_wali_kelas = "'+ e_3.Text +'",Id_org_tua ="'+e_4.Text+'" Id_poin="'+ Edit1.Text + '" where Id_catatan = "' + id + '"');
+zqry1.SQL.Add('Update catatan set Semester= "'+e_1.Text+'",Id_siswa ="'+e_2.Text+'",Id_wali_kelas = "'+ e_3.Text +'",Id_org_tua ="'+e_4.Text+'", Id_poin="'+ Edit1.Text + '" where Id_catatan = "' + id + '"');
 zqry1. ExecSQL;
 
 zqry1.SQL.Clear;
@@ -204,11 +204,11 @@ end;
 procedure TForm7.dgSiswadbgrd1CellClick(Column: TColumn);
 begin
 Id:= zqry1.Fields[0].AsString;
-e_1.Text:= zqry1.Fields[1].AsString;
-e_2.Text:= zqry1.Fields[2].AsString;
-e_3.Text:= zqry1.Fields[3].AsString;
-e_4.Text:= zqry1.Fields[4].AsString;
-Edit1.Text:= zqry1.Fields[5].AsString;
+e_1.Text:= zqry1.Fields[2].AsString;
+e_2.Text:= zqry1.Fields[3].AsString;
+e_3.Text:= zqry1.Fields[4].AsString;
+e_4.Text:= zqry1.Fields[5].AsString;
+Edit1.Text:= zqry1.Fields[6].AsString;
 e_1.Enabled:= True;
 e_2.Enabled:= True;
 e_3.Enabled:= True;
