@@ -1,0 +1,86 @@
+unit Unit9;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, Menus;
+
+type
+  TForm9 = class(TForm)
+    MainMenu1: TMainMenu;
+    Siswa1: TMenuItem;
+    User1: TMenuItem;
+    OrangTua1: TMenuItem;
+    WaliKelas1: TMenuItem;
+    Hubungan1: TMenuItem;
+    Poin1: TMenuItem;
+    Kelas1: TMenuItem;
+    Catatan1: TMenuItem;
+    procedure Siswa1Click(Sender: TObject);
+    procedure WaliKelas1Click(Sender: TObject);
+    procedure Kelas1Click(Sender: TObject);
+    procedure User1Click(Sender: TObject);
+    procedure Poin1Click(Sender: TObject);
+    procedure Catatan1Click(Sender: TObject);
+    procedure OrangTua1Click(Sender: TObject);
+    procedure Hubungan1Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form9: TForm9;
+
+implementation
+
+uses
+  Unit1, Unit2, Unit3, Unit4, Unit5, Unit7, Unit8, Unit6;
+
+{$R *.dfm}
+
+procedure TForm9.Siswa1Click(Sender: TObject);
+begin
+Form1.ShowModal;
+end;
+
+procedure TForm9.WaliKelas1Click(Sender: TObject);
+begin
+Form2.ShowModal;
+end;
+
+procedure TForm9.Kelas1Click(Sender: TObject);
+begin
+Form3.ShowModal;
+end;
+
+procedure TForm9.User1Click(Sender: TObject);
+begin
+Form4.ShowModal;
+end;
+
+procedure TForm9.Poin1Click(Sender: TObject);
+begin
+Form5.ShowModal;
+end;
+
+procedure TForm9.Catatan1Click(Sender: TObject);
+begin
+Form7.ShowModal;
+end;
+
+procedure TForm9.OrangTua1Click(Sender: TObject);
+begin
+Form8.ShowModal;
+end;
+
+procedure TForm9.Hubungan1Click(Sender: TObject);
+begin
+Form6.ShowModal;
+end;
+
+
+
+end.

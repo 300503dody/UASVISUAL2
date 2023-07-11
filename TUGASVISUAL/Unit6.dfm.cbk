@@ -1,9 +1,9 @@
 object Form6: TForm6
-  Left = 248
-  Top = 206
+  Left = 206
+  Top = 229
   Width = 928
   Height = 480
-  Caption = 'Form6'
+  Caption = 'Hubungan'
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -238,6 +238,7 @@ object Form6: TForm6
   end
   object frxrprt1: TfrxReport
     Version = '4.12.6'
+    DataSet = Form8.frxDBDataset1
     DataSetName = 'frxDBDataset2'
     DotMatrixReport = False
     IniFile = '\Software\Fast Reports'
@@ -502,6 +503,7 @@ object Form6: TForm6
   end
   object zqry2: TZQuery
     Connection = con1
+    Active = True
     SQL.Strings = (
       'select * from hubungan')
     Params = <>

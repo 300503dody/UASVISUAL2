@@ -1,6 +1,6 @@
 object Form2: TForm2
-  Left = 268
-  Top = 149
+  Left = 254
+  Top = 266
   Width = 1044
   Height = 540
   Caption = 'Form2'
@@ -269,7 +269,7 @@ object Form2: TForm2
   object dbgrd1: TDBGrid
     Left = 36
     Top = 276
-    Width = 737
+    Width = 933
     Height = 120
     DataSource = ds1
     TabOrder = 15
@@ -288,12 +288,12 @@ object Form2: TForm2
       item
         Expanded = False
         FieldName = 'Nama_wali_kelas'
-        Width = 150
+        Width = 100
         Visible = True
       end
       item
         Expanded = False
-        FieldName = 'Tanggal lahir'
+        FieldName = 'Tanggal_lahir'
         Visible = True
       end
       item
@@ -304,34 +304,37 @@ object Form2: TForm2
       item
         Expanded = False
         FieldName = 'Pendidikan'
-        Width = 150
+        Width = 100
         Visible = True
       end
       item
         Expanded = False
         FieldName = 'Status'
+        Width = 100
         Visible = True
       end
       item
         Expanded = False
         FieldName = 'Wali_Kelas'
+        Width = 100
         Visible = True
       end
       item
         Expanded = False
-        FieldName = 'Jenis Kelamin'
+        FieldName = 'Jenis_Kelamin'
+        Width = 100
         Visible = True
       end
       item
         Expanded = False
         FieldName = 'kelas'
-        Width = 150
+        Width = 100
         Visible = True
       end
       item
         Expanded = False
         FieldName = 'kehadiran_total'
-        Width = 150
+        Width = 100
         Visible = True
       end>
   end
@@ -815,7 +818,6 @@ object Form2: TForm2
   end
   object zqry1: TZQuery
     Connection = con1
-    Active = True
     SQL.Strings = (
       'Select * from wali_kelas')
     Params = <>
