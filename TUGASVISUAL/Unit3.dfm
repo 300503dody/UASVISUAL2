@@ -156,16 +156,19 @@ object Form3: TForm3
       item
         Expanded = False
         FieldName = 'Nama kelas'
+        Width = 100
         Visible = True
       end
       item
         Expanded = False
         FieldName = 'Jurusan'
+        Width = 100
         Visible = True
       end
       item
         Expanded = False
         FieldName = 'Total kehadiran'
+        Width = 100
         Visible = True
       end>
   end

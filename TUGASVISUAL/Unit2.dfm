@@ -710,7 +710,7 @@ object Form2: TForm2
           Width = 94.488250000000000000
           Height = 71.811070000000000000
           ShowHint = False
-          DataField = 'Tanggal lahir'
+          DataField = 'Tanggal_lahir'
           DataSet = frxdbdtst1
           DataSetName = 'frxDBDataset'
           Font.Charset = DEFAULT_CHARSET
@@ -721,7 +721,7 @@ object Form2: TForm2
           Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
           HAlign = haCenter
           Memo.UTF8 = (
-            '[frxDBDataset."Tanggal lahir"]')
+            '[frxDBDataset."Tanggal_lahir"]')
           ParentFont = False
           VAlign = vaCenter
         end
@@ -750,7 +750,7 @@ object Form2: TForm2
           Width = 98.267780000000000000
           Height = 71.811070000000000000
           ShowHint = False
-          DataField = 'Jenis Kelamin'
+          DataField = 'Jenis_Kelamin'
           DataSet = frxdbdtst1
           DataSetName = 'frxDBDataset'
           Font.Charset = DEFAULT_CHARSET
@@ -761,7 +761,7 @@ object Form2: TForm2
           Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
           HAlign = haCenter
           Memo.UTF8 = (
-            '[frxDBDataset."Jenis Kelamin"]')
+            '[frxDBDataset."Jenis_Kelamin"]')
           ParentFont = False
           VAlign = vaCenter
         end
@@ -818,6 +818,7 @@ object Form2: TForm2
   end
   object zqry1: TZQuery
     Connection = con1
+    Active = True
     SQL.Strings = (
       'Select * from wali_kelas')
     Params = <>
